@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 export const AddTransaction = () => {
 
     const [description, setDescription] = useState('');
-    const [tranAmount, setTranAmount] = useState(0);
+    const [transactionAmount, setTranactionAmount] = useState(0);
 
     return(
         <div>
@@ -28,7 +28,7 @@ export const AddTransaction = () => {
                         type="number" 
                         id="tran_amount"
                         value={tranAmount}
-                        onChange={(e) => setTranAmount(e.target.value)}
+                        onChange={(e) => setTransactionAmount(e.target.value)}
                         placeholder="Dollar Value of Transaction" 
                     />
                 </div>
