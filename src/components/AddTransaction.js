@@ -6,9 +6,9 @@ import {GlobalContext} from '../context/GlobalState';
 export const AddTransaction = () => {
 
     const [description, setDescription] = useState('');
-    const [transactionAmount, setTransactionAmount] = useState(0);
+    const [transactionAmount, setTransactionAmount] = useState('');
 
-    const { AddTransaction } = useContext(GlobalContext);
+    const { addTransaction } = useContext(GlobalContext);
 
     // Create the onSubmit function and apply the onSubmit event in the form
     const onSubmit = (e) => {
@@ -16,18 +16,18 @@ export const AddTransaction = () => {
         e.preventDefault();
 
         const newTransaction = {
-            id: new Date.getTime(),
+            id: new Date().getTime(),
             description,
             transactionAmount: +transactionAmount
         }
 
-        AddTransaction(newTransaction);
+        addTransaction(newTransaction);
     }
 
     return(
         <div>
             <h3>Add New Transaction</h3>
-            <form>
+            <form onSubmit={onSubmit}>
                 <div className="form-control">
                     <label htmlFor="description">
                         Description
@@ -37,7 +37,9 @@ export const AddTransaction = () => {
                         id="description"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
-                        placeholder="Detail of Transaction"                     />
+                        placeholder="Detail of Transaction"
+                        required="required"                     
+                    />
                 </div>
                 <div className="form-control">
                     <label htmlFor="transactionamount">
@@ -45,10 +47,11 @@ export const AddTransaction = () => {
                     </label>
                     <input 
                         type="number" 
-                        id="tran_amount"
+                        id="transactionamount"
                         value={transactionAmount}
                         onChange={(e) => setTransactionAmount(e.target.value)}
-                        placeholder="Dollar Value of Transaction" 
+                        placeholder="Dollar Value of Transaction"
+                        required="required" 
                     />
                 </div>
                 <button className="btn">Add Transaction</button>

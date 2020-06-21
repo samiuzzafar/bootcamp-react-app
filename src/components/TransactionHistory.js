@@ -10,8 +10,6 @@ export const TransactionHistory = () => {
 
     const { transactions } = useContext(GlobalContext);
 
-    console.log(transactions);
-
     return(
         <div>
             <h3>
