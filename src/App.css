@@ -50,7 +50,7 @@ h4 {
 }
 
 .inc-exp-container {
-  background-color: #fff;
+  background-color: rgb(177, 229, 241);
   box-shadow: var(--box-shadow);
   padding: 20px;
   display: flex;
@@ -127,7 +127,7 @@ input[type='number'] {
 .list li {
   background-color: #fff;
   box-shadow: var(--box-shadow);
-  color: #333;
+  color: rgb(156, 12, 12);
   display: flex;
   justify-content: space-between;
   position: relative;

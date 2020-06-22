@@ -43,8 +43,8 @@ export const AddTransaction = () => {
                 </div>
                 <div className="form-control">
                     <label htmlFor="transactionamount">
-                        Transaction Amount
-                    </label>
+                        Transaction Amount (<b>Note:</b> Put "-" for Expense)
+                    </label><br />
                     <input 
                         type="number" 
                         id="transactionamount"
